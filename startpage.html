@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree Search</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/microsoft/fluentui-emoji/refs/heads/main/assets/Deciduous%20tree/3D/deciduous_tree_3d.png"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #121212;
+        color: #ffffff;
+        text-align: center;
+        user-select: none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      #content-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        padding: 0px;
+        margin: 0px;
+      }
+      .input-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      input[type="text"] {
+        background-color: #2a2a2a;
+        color: white;
+        border: 2px solid #444;
+        padding: 5px 10px;
+        border-radius: 10px;
+        width: 200px;
+        text-align: center;
+        margin-right: 20px;
+      }
+      button {
+        background-color: mediumpurple;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #6a0dad;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content-wrapper">
+      <br />
+      <h1>Tree Search</h1>
+      <p1>DuckDuckGo</p1>
+      <br />
+      <div class="input-container">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search the web"
+          onkeydown="handleKeyDown(event)"
+          autocomplete="off"
+        />
+        <button onclick="search()">Go</button>
+      </div>
+    </div>
+    <script>
+      function search() {
+        var query = document.getElementById("search").value;
+        window.open(
+          "https://startpage.com/do/search?q=" + encodeURIComponent(query),
+          "_blank"
+        );
+      }
+
+      function handleKeyDown(event) {
+        if (event.key === "Enter") {
+          search();
+        }
+      }
+    </script>
+  </body>
+</html>
